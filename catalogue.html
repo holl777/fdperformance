@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue FD Performance &amp; VR Terrebonne — Pièces et services</title>
+<meta name="description" content="Catalogue de produits FD Performance (auto) et VR Terrebonne (véhicules récréatifs) : freins, batteries, pneus, panneaux solaires et services d'atelier.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0b'/%3E%3Crect x='30' y='30' width='40' height='40' rx='8' fill='%23e11d2a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0a0b; --black-2:#131315;
+    --red:#e11d2a; --red-2:#ff4d4f;
+    --grad:linear-gradient(135deg,#ff4d4f 0%,#b8101c 100%);
+    --paper:#fafaf9; --paper-2:#f2f1ee;
+    --ink:#151415; --ink-soft:#6f6b66; --line:#e8e6e0; --white:#fff;
+    --radius-lg:24px; --radius-md:16px; --radius-sm:10px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Manrope',sans-serif; line-height:1.55;}
+  h1,h2,h3{font-family:'Manrope',sans-serif; letter-spacing:-0.02em;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1200px; margin:0 auto; padding:0 24px;}
+
+  header{position:sticky; top:0; z-index:40; background:var(--black); padding:16px 0;}
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;}
+  .brand{display:flex; align-items:center; gap:9px; text-decoration:none; color:var(--white);}
+  .brand-logo{height:24px; width:auto; display:block;}
+  .back-link{color:#cfccc6; text-decoration:none; font-size:0.88rem;}
+  .back-link:hover{color:var(--white);}
+  .call-btn{
+    display:flex; align-items:center; gap:8px; background:var(--grad); color:var(--white);
+    padding:10px 18px; border-radius:999px; text-decoration:none; font-weight:700; font-size:0.85rem;
+  }
+
+  .hero{background:var(--black); color:var(--white); padding:40px 0 56px;}
+  .hero h1{font-size:clamp(1.9rem,4vw,2.7rem); font-weight:800; margin:0 0 12px;}
+  .hero p{color:#c9c5bd; max-width:60ch; margin:0; font-size:1.02rem;}
+
+  .toolbar{
+    position:sticky; top:64px; z-index:30;
+    background:rgba(250,250,249,0.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line); padding:16px 0;
+  }
+  .toolbar-inner{display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
+  .search-box{
+    flex:1 1 260px; display:flex; align-items:center; gap:10px;
+    background:var(--white); border:1px solid var(--line); border-radius:999px;
+    padding:11px 18px;
+  }
+  .search-box input{border:none; outline:none; font-family:inherit; font-size:0.95rem; width:100%; background:transparent;}
+  .search-box svg{width:18px; height:18px; stroke:var(--ink-soft); fill:none; stroke-width:2; flex-shrink:0;}
+  .filters{display:flex; gap:8px; flex-wrap:wrap;}
+  .filter-btn{
+    border:1px solid var(--line); background:var(--white); color:var(--ink-soft);
+    padding:9px 16px; border-radius:999px; font-size:0.85rem; font-weight:600; cursor:pointer;
+    font-family:inherit; transition:all .15s ease;
+  }
+  .filter-btn:hover{border-color:var(--ink-soft);}
+  .filter-btn.active{background:var(--black); color:var(--white); border-color:var(--black);}
+
+  .section{padding:56px 0;}
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:24px; flex-wrap:wrap;}
+  .section-head h2{font-size:1.5rem; font-weight:800; margin:0 0 6px;}
+  .section-head p{color:var(--ink-soft); margin:0; font-size:0.92rem;}
+  .store-tag{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:0.72rem;
+    padding:4px 10px; border-radius:999px; margin-bottom:8px;
+  }
+  .store-tag.fd{background:rgba(225,29,42,0.1); color:var(--red);}
+  .store-tag.vr{background:rgba(20,20,20,0.08); color:var(--ink);}
+  .see-all{
+    font-size:0.88rem; font-weight:700; text-decoration:none; color:var(--red);
+    white-space:nowrap;
+  }
+  .see-all:hover{text-decoration:underline;}
+
+  .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md);
+    overflow:hidden; display:flex; flex-direction:column; transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:0 16px 34px rgba(0,0,0,0.08);}
+  .card-img{
+    aspect-ratio:1/1; background:var(--paper-2); display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .card-img img{width:100%; height:100%; object-fit:contain;}
+  .card-body{padding:16px 16px 18px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .card-body h4{margin:0; font-size:0.92rem; font-weight:700; line-height:1.3; min-height:2.4em;}
+  .card-price{font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:0.95rem; color:var(--red);}
+  .card-price.na{color:var(--ink-soft); font-size:0.8rem;}
+  .card-cta{
+    margin-top:auto; display:inline-flex; align-items:center; justify-content:center; gap:6px;
+    background:var(--black); color:var(--white); text-decoration:none; font-weight:700; font-size:0.82rem;
+    padding:10px; border-radius:999px; transition:background .15s ease;
+  }
+  .card-cta:hover{background:var(--red);}
+
+  .note{
+    background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:32px; margin-top:20px;
+  }
+  .note h3{margin:0 0 10px; font-size:1.1rem; font-weight:800;}
+  .note p{color:var(--ink-soft); margin:0 0 10px; font-size:0.95rem;}
+  .note a{color:var(--red); font-weight:700; text-decoration:none;}
+  .note a:hover{text-decoration:underline;}
+
+  footer{background:var(--black); color:#a9a49c; padding:36px 0; margin-top:20px;}
+  .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; font-size:0.85rem;}
+  footer a{color:#cfccc6; text-decoration:none;}
+
+  .empty-state{padding:60px 0; text-align:center; color:var(--ink-soft); display:none;}
+
+  @media (max-width:1024px){ .grid{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:760px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .toolbar{top:60px;}
+    .hero{padding:32px 0 40px;}
+  }
+  @media (max-width:480px){
+    .grid{grid-template-columns:1fr 1fr;}
+    .card-body h4{font-size:0.85rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="FD Performance" class="brand-logo">
+    </a>
+    <a href="index.html" class="back-link">← Retour au site</a>
+    <a href="tel:4509614030" class="call-btn">450-961-4030</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Catalogue de produits</h1>
+    <p>Une sélection réelle de produits en vente chez FD Performance (auto) et VR Terrebonne (véhicules récréatifs). Chaque fiche pointe directement vers la boutique d'origine pour l'achat.</p>
+  </div>
+</section>
+
+<div class="toolbar">
+  <div class="wrap toolbar-inner">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="Rechercher un produit (ex. batterie, frein, panneau solaire)…">
+    </div>
+    <div class="filters" id="filterBar">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="fd">FD Performance</button>
+      <button class="filter-btn" data-filter="vr">VR Terrebonne</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div id="catalogRoot"></div>
+  <p class="empty-state" id="emptyState">Aucun produit ne correspond à votre recherche.</p>
+</main>
+
+<div class="wrap">
+  <div class="note">
+    <h3>Ceci est une sélection, pas le catalogue complet</h3>
+    <p>FD Performance et VR Terrebonne comptent à eux deux plusieurs centaines de fiches produits (pneus, jantes, freins, énergie solaire, etc.), réparties dans des dizaines de sous-catégories. Cette page présente une sélection réelle et vérifiée par catégorie plutôt qu'une copie complète, qui deviendrait rapidement obsolète si elle n'est pas branchée sur l'inventaire réel.</p>
+    <p>Pour voir l'inventaire complet et à jour : <a href="https://fdperformance.ca/boutique" target="_blank" rel="noopener">boutique FD Performance</a> · <a href="https://vrterrebonne.ca/boutique" target="_blank" rel="noopener">boutique VR Terrebonne</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>FD PERFORMANCE — 1343, rue Nationale, Terrebonne, QC</div>
+    <div><a href="tel:4509614030">450-961-4030</a></div>
+  </div>
+</footer>
+
+<script>
+const products = [
+  // FD Performance — Freins de performance
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution avant TT EMB6 (roue 19'' et plus)", price:3419.60, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/emb6-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-avant-tt-emb6-roue-19-et-plus-p156c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution TT ES4 (roue 19'' et plus)", price:1514.39, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/es4-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-tt-es4-roue-19-et-plus-p162c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution avant TT EB4 (roue 19'' et plus)", price:1612.10, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/eb4-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-avant-tt-eb4-roue-19-et-plus-p160c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution avant TT EB6 (roue 21'' et plus)", price:2589.12, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/eb6-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-avant-tt-eb6-roue-21-et-plus-p152c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution avant TT ES6 (roue 18'' et plus)", price:2061.76, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/ES6-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-avant-tt-es6-roue-18-et-plus-p153c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution avant TT EB4 (roue 18'' et plus)", price:1514.39, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/eb4-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-avant-tt-eb4-roue-18-et-plus-p149c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution avant TT EB6 (roue 19'' et plus)", price:2393.72, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/eb6-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-avant-tt-eb6-roue-19-et-plus-p148c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution avant TT EMB6 (roue 20'' et plus)", price:3541.73, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/emb6-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-avant-tt-emb6-roue-20-et-plus-p157c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution avant TT ES6 (roue 19'' et plus)", price:2149.46, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/ES6-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-avant-tt-es6-roue-19-et-plus-p154c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution arrière TT EMB4 (roue 18'' et plus)", price:3053.21, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/emb4-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-arriere-tt-emb4-roue-18-et-plus-p158c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution arrière TT ES4 (roue 18'' et plus)", price:1416.69, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/es4-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-arriere-tt-es4-roue-18-et-plus-p161c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution avant TT EMB6 (roue 18'' et plus)", price:3296.97, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/emb6-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-avant-tt-emb6-roue-18-et-plus-p155c92/"},
+  {store:'fd', cat:'Freins de performance', name:"TTSport Evolution arrière TT EMB4 (roue 19'' et plus)", price:3175.34, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/emb4-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/ttsport-evolution-arriere-tt-emb4-roue-19-et-plus-p159c92/"},
+  {store:'fd', cat:'Freins de performance', name:"BBK ensemble complet de frein avant et arrière avec E-Rake", price:3395.00, img:"https://fdperformance.ca/boutique/image/cache/catalog/ttbrake/emb6-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/freins-de-performance/bbk-ensemble-complet-de-frein-avant-et-arriEre-avec-e-rake-p257c92/"},
+  // FD Performance — Batteries
+  {store:'fd', cat:'Batteries', name:"Interstate MTX-24F", price:329.95, img:"https://fdperformance.ca/boutique/image/cache/catalog/BATTERIE/MTX-24F_FRONT-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/batteries/interstate/interstate-mtx-24f-p244c83c120/"},
+  {store:'fd', cat:'Batteries', name:"Interstate MTZ-34", price:519.95, img:"https://fdperformance.ca/boutique/image/cache/catalog/BATTERIE/MTZ-34_FRONT-300x300.png", url:"https://fdperformance.ca/boutique/fr/batteries/interstate/interstae-mtz-34-p243c83c120/"},
+  {store:'fd', cat:'Batteries', name:"Interstate C24-XHD", price:259.99, img:"https://fdperformance.ca/boutique/image/cache/catalog/BATTERIE/C24-XHD_FRONT-300x300.png", url:"https://fdperformance.ca/boutique/fr/batteries/interstate/interstate-c24-xhd-p246c83c120/"},
+  {store:'fd', cat:'Batteries', name:"Interstate M-24", price:null, img:"https://fdperformance.ca/boutique/image/cache/catalog/BATTERIE/M-24_FRONT-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/batteries/interstate/interstate-m-24-p245c83c120/"},
+  {store:'fd', cat:'Batteries', name:"Interstate MTP-24", price:274.95, img:"https://fdperformance.ca/boutique/image/cache/catalog/BATTERIE/MTP-24_FRONT-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/batteries/interstate/interstate-mtp-24-p116c83c120/"},
+  // FD Performance — Tapis toute saison
+  {store:'fd', cat:'Tapis toute saison', name:"Revêtement de plancher Husky — Ford Explorer 2020-2024", price:195.80, img:"https://fdperformance.ca/boutique/image/cache/catalog/Husky/54871-3-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/tapis-toute-saison/revetement-de-plancher-husky-2020-2024-ford-explorer-p118c85/"},
+  {store:'fd', cat:'Tapis toute saison', name:"Husky X-Act — Dodge Durango / Jeep Grand Cherokee", price:195.84, img:"https://fdperformance.ca/boutique/image/cache/catalog/Husky/54871-3-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/tapis-toute-saison/husky-x-act-front-floor-liners-dodge-durango-----jeep-grand-cherokee-p119c85/"},
+  // FD Performance — Main-d'œuvre / services
+  {store:'fd', cat:"Services d'atelier", name:"Alignement des roues", price:null, img:"https://fdperformance.ca/boutique/image/cache/catalog/JohnBean-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/alignement-des-roues-p528c63/"},
+  {store:'fd', cat:"Services d'atelier", name:"Changement d'huile", price:null, img:"https://fdperformance.ca/boutique/image/cache/catalog/categorie/oil-change-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/changement-d-huile-p146c63/"},
+  {store:'fd', cat:"Services d'atelier", name:"Changement de pneu déjà monté (auto)", price:60.00, img:"https://fdperformance.ca/boutique/image/cache/catalog/pneu/pneu2-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/changement-de-pneu-dEjA-montE-auto-p108c63/"},
+  {store:'fd', cat:"Services d'atelier", name:"Changement de pneu déjà monté (VUS, camion, pick-up)", price:70.00, img:"https://fdperformance.ca/boutique/image/cache/catalog/pneu/pneu2-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/changement-de-pneu-dEjA-montE-vus-camion-pick-up-p109c63/"},
+  {store:'fd', cat:"Services d'atelier", name:"Pose et équilibrage (auto)", price:null, img:"https://fdperformance.ca/boutique/image/cache/catalog/pneu/pneu-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/pose-et-Equilibrage-auto-p110c63/"},
+  {store:'fd', cat:"Services d'atelier", name:"Pose et équilibrage (VUS, camion, pick-up)", price:null, img:"https://fdperformance.ca/boutique/image/cache/catalog/pneu/pneu-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/pose-et-Equilibrage-vus-camion-pick-up-p113c63/"},
+  {store:'fd', cat:"Services d'atelier", name:"Remplacement de batterie", price:null, img:"https://fdperformance.ca/boutique/image/cache/catalog/batterie-300x300.png", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/remplacement-de-batterie-p114c63/"},
+  {store:'fd', cat:"Services d'atelier", name:"Réparation de crevaison", price:60.00, img:"https://fdperformance.ca/boutique/image/cache/catalog/pneu/réparation-dun-pneu-750x492-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/rEparation-de-crevaison-p115c63/"},
+  {store:'fd', cat:"Services d'atelier", name:"Réparation de système d'échappement", price:null, img:"https://fdperformance.ca/boutique/image/cache/catalog/categorie/exhaust-repair-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/rEparation-de-systEme-d-Echappement-p147c63/"},
+  {store:'fd', cat:"Services d'atelier", name:"Service de diagnostic « check engine »", price:null, img:"https://fdperformance.ca/boutique/image/cache/catalog/categories/check-engine-light-300x300.jpg", url:"https://fdperformance.ca/boutique/fr/main-d-oeuvre/services-de-diagnostic-check-engine-p248c63/"},
+  // VR Terrebonne — Batteries
+  {store:'vr', cat:'Batteries', name:"Batterie Interstate 12 volts SRM-27", price:200.58, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/Interstate/SRM-27-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/batteries/interstate/interstate/batterie-interstate-12-volts-srm-27-p279c168c175/"},
+  {store:'vr', cat:'Batteries', name:"Batterie AGM Interstate 6 volts / 210Ah", price:422.90, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/Interstate/agm interstate-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/batteries/interstate/interstate/batterie-agm-interstate-6-volts-210ah-p1551c168c175/"},
+  {store:'vr', cat:'Batteries', name:"Batterie Interstate 12 volts SRM-24", price:184.02, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/Interstate/SRM-24-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/batteries/interstate/interstate/batterie-interstate-12-volts-srm-24-p280c168c175/"},
+  {store:'vr', cat:'Batteries', name:"Batterie Interstate 12 volts 31-MHD", price:255.70, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/Interstate/téléchargement (42)-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/batteries/interstate/interstate/batterie-interstate-12-volts-31-mhd-p277c168c175/"},
+  {store:'vr', cat:'Batteries', name:"Batterie Interstate 6 volts / 225Ah", price:232.86, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/Interstate/GC2 HD-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/batteries/interstate/interstate/batterie-interstate-6-volts-225ah-p274c168c175/"},
+  // VR Terrebonne — Énergie solaire
+  {store:'vr', cat:'Énergie solaire', name:"Panneau solaire flexible 100 watts", price:678.97, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/Go Power/19-4067-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/energie-solaire/panneaux-solaires/go-power/panneau-solaire-flexible-100-watts-p1406c183c189/"},
+  {store:'vr', cat:'Énergie solaire', name:"Panneau solaire portable 135 watts Samlex MSK-135W", price:1045.97, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/Samlex/MSK-135-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/energie-solaire/panneaux-solaires/samlex-america/panneau-solaire-portable-135-watts-samlex-msk-135w-p156c183c189/"},
+  // VR Terrebonne — Services
+  {store:'vr', cat:"Services d'atelier", name:"Alignement des roues — auto et camion", price:null, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/ DEADBOLT/camion alignement-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/mEcanique-et-entretien/alignement-des-roues-auto-et-camion-p1620c394/"},
+  {store:'vr', cat:"Services d'atelier", name:"Alignement des roues — motorisé classe B", price:null, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/ DEADBOLT/classe b-400x400.png", url:"https://vrterrebonne.ca/boutique/fr/mEcanique-et-entretien/alignement-des-roues-motorise-classe-b-p1617c394/"},
+  {store:'vr', cat:"Services d'atelier", name:"Alignement des roues — motorisé classe C", price:null, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/ DEADBOLT/Création sans titre-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/mEcanique-et-entretien/alignement-des-roues-motorise-classe-c-p1618c394/"},
+  {store:'vr', cat:"Services d'atelier", name:"Changement huile et filtre", price:null, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/ DEADBOLT/oil-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/mEcanique-et-entretien/changement-huile-et-filtre-p1619c394/"},
+  {store:'vr', cat:"Services d'atelier", name:"Pneu — toutes marques", price:null, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/ DEADBOLT/tire-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/mEcanique-et-entretien/pneu-p1621c394/"},
+  {store:'vr', cat:"Services d'atelier", name:"Changement des batteries", price:null, img:"https://vrterrebonne.ca/boutique/image/cache/catalog/ Remco/images-400x400.jpg", url:"https://vrterrebonne.ca/boutique/fr/mEcanique-et-entretien/changement-des-batteries-p1622c394/"},
+];
+
+const seeAllLinks = {
+  'fd|Freins de performance': "https://fdperformance.ca/boutique/fr/freins-de-performance-c92/",
+  'fd|Batteries': "https://fdperformance.ca/boutique/fr/batteries-c83/",
+  'fd|Tapis toute saison': "https://fdperformance.ca/boutique/fr/tapis-toute-saison-c85/",
+  "fd|Services d'atelier": "https://fdperformance.ca/boutique/fr/main-d-oeuvre-c63/",
+  'vr|Batteries': "https://vrterrebonne.ca/boutique/fr/batteries-c168/",
+  'vr|Énergie solaire': "https://vrterrebonne.ca/boutique/fr/energie-solaire-c183/",
+  "vr|Services d'atelier": "https://vrterrebonne.ca/boutique/fr/mEcanique-et-entretien-c394/",
+};
+
+const storeLabels = {fd:"FD Performance", vr:"VR Terrebonne"};
+const storeAll = {fd:"https://fdperformance.ca/boutique", vr:"https://vrterrebonne.ca/boutique"};
+
+function fmtPrice(p){
+  if (p === null || p === undefined) return '<span class="card-price na">Prix sur demande</span>';
+  return '<span class="card-price">' + p.toLocaleString('fr-CA',{minimumFractionDigits:2, maximumFractionDigits:2}) + ' $</span>';
+}
+
+function groupByStoreCat(list){
+  const groups = {};
+  list.forEach(p => {
+    const key = p.store + '|' + p.cat;
+    if (!groups[key]) groups[key] = {store:p.store, cat:p.cat, items:[]};
+    groups[key].items.push(p);
+  });
+  return Object.values(groups);
+}
+
+function render(filterStore, query){
+  const root = document.getElementById('catalogRoot');
+  const empty = document.getElementById('emptyState');
+  root.innerHTML = '';
+
+  let filtered = products.filter(p => filterStore === 'all' || p.store === filterStore);
+  if (query) {
+    const q = query.toLowerCase();
+    filtered = filtered.filter(p => p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q));
+  }
+
+  if (filtered.length === 0) {
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  const groups = groupByStoreCat(filtered);
+
+  groups.forEach(g => {
+    const section = document.createElement('section');
+    section.className = 'section';
+    const seeAllUrl = seeAllLinks[g.store + '|' + g.cat] || storeAll[g.store];
+
+    section.innerHTML = `
+      <div class="section-head">
+        <div>
+          <span class="store-tag ${g.store}">${storeLabels[g.store]}</span>
+          <h2>${g.cat}</h2>
+          <p>${g.items.length} produit${g.items.length > 1 ? 's' : ''} affiché${g.items.length > 1 ? 's' : ''} dans cette sélection</p>
+        </div>
+        <a class="see-all" href="${seeAllUrl}" target="_blank" rel="noopener">Voir tout sur la boutique →</a>
+      </div>
+      <div class="grid">
+        ${g.items.map(p => `
+          <div class="card">
+            <div class="card-img"><img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.style.background='#eee'; this.remove();"></div>
+            <div class="card-body">
+              <h4>${p.name}</h4>
+              ${fmtPrice(p.price)}
+              <a class="card-cta" href="${p.url}" target="_blank" rel="noopener">Acheter →</a>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    root.appendChild(section);
+  });
+}
+
+let currentFilter = 'all';
+document.getElementById('filterBar').addEventListener('click', (e) => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentFilter = btn.dataset.filter;
+  render(currentFilter, document.getElementById('searchInput').value);
+});
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  render(currentFilter, e.target.value);
+});
+
+render('all', '');
+</script>
+
+</body>
+</html>
