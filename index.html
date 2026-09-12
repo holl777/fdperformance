@@ -190,9 +190,10 @@
   .bento-card.dark{background:var(--black); color:var(--white); border-color:var(--black);}
   .bento-card.dark p{color:#a9a49c;}
   .bento-card.dark .icon{stroke:var(--red-2);}
-  .team-card{position:relative; overflow:hidden;}
-  .team-card > div{position:relative; z-index:1; max-width:75%;}
-  .team-illustration{position:absolute; right:-6px; bottom:-8px; width:150px; height:auto; opacity:0.55; pointer-events:none; z-index:-1;}
+  .team-card{display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:16px;}
+  .team-content{display:flex; flex-direction:column;}
+  .team-content .icon{margin-bottom:14px;}
+  .team-illustration{width:120px; height:auto; flex-shrink:0;}
   .big-num{font-size:2.6rem; font-weight:800; line-height:1;}
 
   /* Services */
@@ -274,6 +275,8 @@
     .hero-card{order:-1;}
     .bento{grid-template-columns:repeat(2,1fr); grid-auto-rows:auto;}
     .b1,.b2,.b3,.b4{grid-column:span 1; grid-row:auto;}
+    .team-card{flex-direction:column; align-items:flex-start;}
+    .team-illustration{width:100px; align-self:center;}
     .service-grid{grid-template-columns:1fr 1fr;}
     .common-strip{grid-template-columns:repeat(3,1fr);}
     .parts-banner{grid-template-columns:1fr;}
@@ -349,18 +352,37 @@
       </div>
       <div class="bento reveal">
         <div class="bento-card b1 dark team-card">
-          <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L2 19l3 3 7.3-7.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2.6-2.6z"/></svg>
-          <div>
+          <div class="team-content">
+            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L2 19l3 3 7.3-7.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2.6-2.6z"/></svg>
             <h3>Service complet, une seule équipe</h3>
             <p>De l'entretien courant à la modification de performance, en passant par l'installation des pièces achetées chez nous. Pas de sous-traitance, pas d'aller-retour entre garages.</p>
           </div>
-          <svg class="team-illustration" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="70" cy="38" r="20" fill="none" stroke="#3a3936" stroke-width="2"/>
-            <path d="M30 128 C30 90 48 74 70 74 C92 74 110 90 110 128" fill="none" stroke="#3a3936" stroke-width="2"/>
-            <path d="M55 96 L70 108 L85 96" fill="none" stroke="#e11d2a" stroke-width="2"/>
-            <circle cx="150" cy="32" r="20" fill="none" stroke="#57554f" stroke-width="2"/>
-            <path d="M108 128 C108 88 128 68 150 68 C172 68 192 88 192 128" fill="none" stroke="#57554f" stroke-width="2"/>
-            <path d="M133 92 L150 105 L167 92" fill="none" stroke="#e11d2a" stroke-width="2"/>
+          <svg class="team-illustration" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="figA" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3d3b38"/>
+                <stop offset="100%" stop-color="#211f1d"/>
+              </linearGradient>
+              <linearGradient id="figB" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#57554f"/>
+                <stop offset="100%" stop-color="#312f2c"/>
+              </linearGradient>
+              <linearGradient id="skinTone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c99a72"/>
+                <stop offset="100%" stop-color="#b98a63"/>
+              </linearGradient>
+            </defs>
+            <!-- figure B (back, lighter) -->
+            <path d="M118 200 C118 145 142 118 172 118 C202 118 226 145 226 200 Z" fill="url(#figB)"/>
+            <circle cx="172" cy="72" r="30" fill="url(#skinTone)"/>
+            <path d="M144 60 C144 38 158 26 172 26 C188 26 202 40 200 62 C198 50 188 46 178 48 C166 50 152 50 144 60 Z" fill="#211f1d"/>
+            <path d="M150 128 C158 138 186 138 194 128" fill="none" stroke="#e11d2a" stroke-width="4" stroke-linecap="round"/>
+            <!-- figure A (front) -->
+            <path d="M2 200 C2 138 30 108 64 108 C98 108 126 138 126 200 Z" fill="url(#figA)"/>
+            <circle cx="64" cy="66" r="32" fill="url(#skinTone)"/>
+            <path d="M32 58 C30 32 46 16 64 16 C84 16 100 34 98 58 C92 44 80 52 64 50 C50 48 38 44 32 58 Z" fill="#171614"/>
+            <path d="M38 122 C48 134 80 134 90 122" fill="none" stroke="#e11d2a" stroke-width="4" stroke-linecap="round"/>
+            <path d="M50 108 L64 118 L78 108" fill="none" stroke="#0a0a0b" stroke-width="3" opacity="0.5"/>
           </svg>
         </div>
         <div class="bento-card b3">
