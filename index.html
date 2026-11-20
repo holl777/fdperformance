@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FD Performance — Mécanique auto et VR à Terrebonne | 450-961-4030</title>
-<meta name="description" content="FD Performance, à Terrebonne : mécanique automobile, performance sur mesure et entretien de véhicules récréatifs, sous une seule bannière. Appelez le 450-961-4030.">
-<meta property="og:title" content="FD Performance — Mécanique auto et VR à Terrebonne">
-<meta property="og:description" content="Un seul atelier pour votre auto et votre véhicule récréatif. Alignement, pneus, freins, performance, panneaux solaires et plus.">
+<title>FD Performance — Mécanique automobile et performance à Terrebonne | 450-961-4030</title>
+<meta name="description" content="FD Performance, à Terrebonne : mécanique automobile, performance sur mesure et entretien de votre véhicule. Appelez le 450-961-4030.">
+<meta property="og:title" content="FD Performance — Mécanique automobile et performance à Terrebonne">
+<meta property="og:description" content="Alignement, pneus, freins, reprogrammation moteur, performance et plus, à Terrebonne.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0b'/%3E%3Crect x='30' y='30' width='40' height='40' rx='8' fill='%23e11d2a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,11 +43,12 @@
     --red: #e11d2a;
     --red-2: #ff4d4f;
     --grad: linear-gradient(135deg, #ff4d4f 0%, #b8101c 100%);
-    --paper: #fafaf9;
-    --paper-2: #f2f1ee;
-    --ink: #151415;
-    --ink-soft: #6f6b66;
-    --line: #e8e6e0;
+    --paper: #17171a;
+    --paper-2: #1d1d21;
+    --card: #212126;
+    --ink: #f4f1ec;
+    --ink-soft: #a9a49c;
+    --line: rgba(255,255,255,0.10);
     --white: #ffffff;
     --radius-lg: 28px;
     --radius-md: 18px;
@@ -88,23 +89,23 @@
     backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
     border:1px solid rgba(255,255,255,0.1);
     border-radius:999px;
-    padding:10px 10px 10px 22px;
+    padding:14px 14px 14px 30px;
   }
   .brand{display:flex; align-items:center; gap:9px; text-decoration:none; color:var(--white);}
-  .brand-logo{height:26px; width:auto; display:block;}
-  .nav-links{display:flex; gap:26px; list-style:none; margin:0; padding:0;}
-  .nav-links a{text-decoration:none; font-size:0.9rem; font-weight:500; color:#cfccc6; transition:color .15s ease;}
+  .brand-logo{height:42px; width:auto; display:block;}
+  .nav-links{display:flex; gap:38px; list-style:none; margin:0; padding:0;}
+  .nav-links a{text-decoration:none; font-size:1.1rem; font-weight:600; color:#e3e0da; transition:color .15s ease;}
   .nav-links a:hover{color:var(--white);}
   .call-btn{
     display:flex; align-items:center; gap:8px;
     background:var(--grad); color:var(--white);
-    padding:11px 20px; border-radius:999px;
-    text-decoration:none; font-weight:700; font-size:0.86rem;
+    padding:15px 28px; border-radius:999px;
+    text-decoration:none; font-weight:700; font-size:1.05rem;
     box-shadow:0 6px 18px rgba(225,29,42,0.35);
     transition:transform .15s ease, box-shadow .15s ease;
   }
   .call-btn:hover{transform:translateY(-1px); box-shadow:0 10px 24px rgba(225,29,42,0.45);}
-  .call-btn svg{width:15px; height:15px; stroke:var(--white); fill:none; stroke-width:2;}
+  .call-btn svg{width:18px; height:18px; stroke:var(--white); fill:none; stroke-width:2;}
 
   /* Hero */
   .hero{
@@ -112,8 +113,8 @@
     background:var(--black);
     color:var(--white);
     padding:60px 0 100px;
-    margin-top:-64px;
-    padding-top:124px;
+    margin-top:-90px;
+    padding-top:160px;
     overflow:hidden;
     border-radius:0 0 40px 40px;
   }
@@ -134,7 +135,7 @@
   .hero-tag .dot{width:6px; height:6px; border-radius:50%; background:var(--red-2);}
   .hero h1{
     font-size:clamp(2.4rem, 4.8vw, 3.9rem);
-    line-height:1.03; font-weight:800; margin:0 0 24px; max-width:14ch;
+    line-height:1.05; font-weight:800; margin:0 0 24px; max-width:18ch;
   }
   .hero p{font-size:1.14rem; color:#c9c5bd; max-width:46ch; margin:0 0 36px; font-weight:400;}
   .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;}
@@ -148,8 +149,8 @@
   .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 32px rgba(225,29,42,0.45);}
   .btn-glass{background:var(--glass); color:var(--white); border:1px solid var(--glass-brd); backdrop-filter:blur(8px);}
   .btn-glass:hover{background:rgba(255,255,255,0.12); transform:translateY(-2px);}
-  .btn-dark{background:var(--black); color:var(--white);}
-  .btn-dark:hover{background:#000;}
+  .btn-dark{background:var(--grad); color:var(--white); box-shadow:0 10px 28px rgba(225,29,42,0.3);}
+  .btn-dark:hover{transform:translateY(-2px);}
   .hero-note{font-size:0.86rem; color:#948f86;}
 
   .hero-card{
@@ -160,46 +161,32 @@
   .hero-card-foot{display:flex; justify-content:space-between; margin-top:20px; font-size:0.82rem; color:#a9a49c;}
   .hero-card-foot strong{color:var(--white); display:block; font-size:1.15rem; font-weight:800;}
 
-  /* Bento why-us */
+  /* Why-us */
   .section{padding:100px 0;}
   .section-tight{padding-top:0;}
   .section-head{max-width:60ch; margin-bottom:52px;}
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
     font-family:'IBM Plex Mono',monospace; font-size:0.76rem; color:var(--red);
-    background:rgba(225,29,42,0.08); border-radius:999px; padding:6px 14px; margin-bottom:18px;
+    background:rgba(225,29,42,0.16); border-radius:999px; padding:6px 14px; margin-bottom:18px;
   }
   .section-head h2{font-size:clamp(1.8rem,3.2vw,2.5rem); font-weight:800; margin:0 0 14px;}
   .section-head p{color:var(--ink-soft); font-size:1.04rem; margin:0;}
 
-  .bento{
-    display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:18px;
-  }
-  .bento-card{
-    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md);
-    padding:30px; display:flex; flex-direction:column; justify-content:space-between;
-    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-  }
-  .bento-card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,0.08); border-color:transparent;}
-  .b1{grid-column:span 2; grid-row:span 2;}
-  .b2{grid-column:span 2;}
-  .b3{grid-column:span 1;}
-  .b4{grid-column:span 1;}
-  .bento-card h3{font-size:1.2rem; font-weight:700; margin:14px 0 8px;}
-  .bento-card p{color:var(--ink-soft); font-size:0.93rem; margin:0;}
-  .bento-card.dark{background:var(--black); color:var(--white); border-color:var(--black);}
-  .bento-card.dark p{color:#a9a49c;}
-  .bento-card.dark .icon{stroke:var(--red-2);}
-  .team-card{display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:16px;}
-  .team-content{display:flex; flex-direction:column;}
-  .team-content .icon{margin-bottom:14px;}
-  .team-illustration{width:120px; height:auto; flex-shrink:0;}
-  .big-num{font-size:2.6rem; font-weight:800; line-height:1;}
+  .why-layout{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;}
+  .why-intro h2{font-size:clamp(1.8rem,3.2vw,2.5rem); font-weight:800; margin:0 0 16px; line-height:1.12;}
+  .why-intro p{color:var(--ink-soft); font-size:1.04rem; margin:0; max-width:44ch;}
+  .why-steps{list-style:none; margin:0; padding:0;}
+  .why-steps li{display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid var(--line);}
+  .why-steps li:last-child{border-bottom:1px solid var(--line);}
+  .step-num{font-family:'IBM Plex Mono',monospace; font-size:1.05rem; color:var(--red-2); min-width:34px; padding-top:3px;}
+  .why-steps h3{margin:0 0 6px; font-size:1.25rem; font-weight:700;}
+  .why-steps p{margin:0; color:var(--ink-soft); font-size:0.98rem;}
 
   /* Services */
   .service-block{
     position:relative; overflow:hidden;
-    background:var(--black); color:var(--white); border-radius:var(--radius-lg); padding:48px;
+    background:var(--black); border:1px solid var(--line); color:var(--white); border-radius:var(--radius-lg); padding:48px;
     margin-bottom:24px;
   }
   .service-block.alt{background:var(--black-2);}
@@ -219,10 +206,10 @@
   /* Common strip */
   .common-strip{display:grid; grid-template-columns:repeat(6,1fr); gap:14px;}
   .common-item{
-    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-sm);
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius-sm);
     padding:26px 14px; text-align:center; transition:transform .2s ease, box-shadow .2s ease;
   }
-  .common-item:hover{transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,0.07);}
+  .common-item:hover{transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,0.4);}
   .common-item .icon{margin:0 auto 12px;}
   .common-item h4{margin:0; font-size:0.86rem; font-weight:700;}
 
@@ -247,7 +234,7 @@
 
   /* Contact */
   .contact-wrap{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
-  .contact-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg); padding:36px;}
+  .contact-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg); padding:36px;}
   .contact-card h3{margin:0 0 20px; font-size:1.25rem; font-weight:800;}
   .contact-row{display:flex; gap:16px; padding:15px 0; border-top:1px solid var(--line);}
   .contact-row:first-of-type{border-top:none;}
@@ -264,7 +251,7 @@
     box-shadow:0 10px 28px rgba(225,29,42,0.4);
   }
 
-  footer{background:var(--black); color:#a9a49c; padding:44px 0; border-radius:40px 40px 0 0; margin-top:8px;}
+  footer{background:var(--black); border-top:1px solid var(--line); color:#a9a49c; padding:44px 0; border-radius:40px 40px 0 0; margin-top:8px;}
   .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; font-size:0.85rem;}
   footer a{color:#cfccc6; text-decoration:none;}
   footer a:hover{color:var(--white);}
@@ -273,10 +260,7 @@
   @media (max-width:900px){
     .hero-inner{grid-template-columns:1fr;}
     .hero-card{order:-1;}
-    .bento{grid-template-columns:repeat(2,1fr); grid-auto-rows:auto;}
-    .b1,.b2,.b3,.b4{grid-column:span 1; grid-row:auto;}
-    .team-card{flex-direction:column; align-items:flex-start;}
-    .team-illustration{width:100px; align-self:center;}
+    .why-layout{grid-template-columns:1fr; gap:36px;}
     .service-grid{grid-template-columns:1fr 1fr;}
     .common-strip{grid-template-columns:repeat(3,1fr);}
     .parts-banner{grid-template-columns:1fr;}
@@ -291,7 +275,8 @@
     .service-grid{grid-template-columns:1fr;}
     .common-strip{grid-template-columns:repeat(2,1fr);}
     .service-block{padding:30px 22px;}
-    .nav-pill{padding:8px 8px 8px 16px;}
+    .nav-pill{padding:10px 10px 10px 18px;}
+    .brand-logo{height:34px;}
     .call-btn span.label{display:none;}
   }
 </style>
@@ -305,7 +290,6 @@
     </a>
     <ul class="nav-links">
       <li><a href="#auto">Automobile</a></li>
-      <li><a href="#vr">Véhicules récréatifs</a></li>
       <li><a href="#pieces">Pièces</a></li>
       <li><a href="catalogue.html">Catalogue</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -325,9 +309,9 @@
     <div class="grain"></div>
     <div class="wrap hero-inner">
       <div class="reveal">
-        <span class="hero-tag"><span class="dot"></span>Terrebonne, QC — deux ateliers, une équipe</span>
-        <h1>Votre auto et votre VR, entre les mains d'une seule équipe</h1>
-        <p>FD Performance s'occupe de tout : entretien courant, performance sur mesure et service complet pour véhicules récréatifs. Un appel, un rendez-vous, un seul endroit où aller.</p>
+        <span class="hero-tag"><span class="dot"></span>Terrebonne, QC — mécanique et performance</span>
+        <h1>Votre auto entre les mains d'une équipe qui connaît son métier</h1>
+        <p>FD Performance s'occupe de tout : entretien courant, reprogrammation et performance sur mesure. Un appel, un rendez-vous, et on s'occupe du reste.</p>
         <div class="hero-ctas">
           <a href="tel:4509614030" class="btn btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" stroke="#fff" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -341,69 +325,19 @@
   </section>
 
   <section class="section" id="why">
-    <div class="wrap">
-      <div class="section-head reveal">
+    <div class="wrap why-layout">
+      <div class="why-intro reveal">
         <div class="eyebrow">POURQUOI FD PERFORMANCE</div>
-        <h2>Un seul arrêt, du diagnostic à la pièce installée</h2>
-        <p>Pas besoin de magasiner entre plusieurs garages : nos techniciens s'occupent de votre véhicule du début à la fin, peu importe ce que vous conduisez.</p>
+        <h2>Une équipe qui s'occupe de votre véhicule du début à la fin</h2>
+        <p>Pas de sous-traitance, pas d'aller-retour entre garages : nos techniciens font le diagnostic, trouvent la pièce et l'installent.</p>
+        <a href="tel:4509614030" class="btn btn-primary" style="margin-top:26px;">Prendre rendez-vous</a>
       </div>
-      <div class="bento reveal">
-        <div class="bento-card b1 dark team-card">
-          <div class="team-content">
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L2 19l3 3 7.3-7.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2.6-2.6z"/></svg>
-            <h3>Service complet, une seule équipe</h3>
-            <p>De l'entretien courant à la modification de performance, en passant par l'installation des pièces achetées chez nous. Pas de sous-traitance, pas d'aller-retour entre garages.</p>
-          </div>
-          <svg class="team-illustration" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="figA" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#6b6863"/>
-                <stop offset="100%" stop-color="#46443f"/>
-              </linearGradient>
-              <linearGradient id="figB" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8a8880"/>
-                <stop offset="100%" stop-color="#5c5a54"/>
-              </linearGradient>
-              <linearGradient id="skinTone" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#c99a72"/>
-                <stop offset="100%" stop-color="#b98a63"/>
-              </linearGradient>
-            </defs>
-            <!-- figure B (back, lighter) -->
-            <path d="M118 200 C118 145 142 118 172 118 C202 118 226 145 226 200 Z" fill="url(#figB)"/>
-            <circle cx="172" cy="72" r="30" fill="url(#skinTone)"/>
-            <path d="M144 60 C144 38 158 26 172 26 C188 26 202 40 200 62 C198 50 188 46 178 48 C166 50 152 50 144 60 Z" fill="#211f1d"/>
-            <path d="M150 128 C158 138 186 138 194 128" fill="none" stroke="#e11d2a" stroke-width="4" stroke-linecap="round"/>
-            <!-- figure A (front) -->
-            <path d="M2 200 C2 138 30 108 64 108 C98 108 126 138 126 200 Z" fill="url(#figA)"/>
-            <circle cx="64" cy="66" r="32" fill="url(#skinTone)"/>
-            <path d="M32 58 C30 32 46 16 64 16 C84 16 100 34 98 58 C92 44 80 52 64 50 C50 48 38 44 32 58 Z" fill="#171614"/>
-            <path d="M38 122 C48 134 80 134 90 122" fill="none" stroke="#e11d2a" stroke-width="4" stroke-linecap="round"/>
-            <path d="M50 108 L64 118 L78 108" fill="none" stroke="#0a0a0b" stroke-width="3" opacity="0.5"/>
-          </svg>
-        </div>
-        <div class="bento-card b3">
-          <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <div>
-            <h3>Rendez-vous rapide</h3>
-            <p>Un seul numéro pour l'auto et le VR.</p>
-          </div>
-        </div>
-        <div class="bento-card b4">
-          <div class="big-num">2</div>
-          <div>
-            <h3>Ateliers réunis</h3>
-            <p>Auto et VR, même adresse.</p>
-          </div>
-        </div>
-        <div class="bento-card b2">
-          <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-          <div>
-            <h3>Un seul endroit, Terrebonne</h3>
-            <p>Une équipe qui connaît les deux mondes, à la même adresse : 1343, rue Nationale.</p>
-          </div>
-        </div>
-      </div>
+      <ol class="why-steps reveal">
+        <li><span class="step-num">01</span><div><h3>Diagnostic précis</h3><p>On identifie le vrai problème avant de proposer quoi que ce soit.</p></div></li>
+        <li><span class="step-num">02</span><div><h3>Les bonnes pièces</h3><p>Pièces d'origine ou de performance, commandées et fournies par nous.</p></div></li>
+        <li><span class="step-num">03</span><div><h3>Installation par nos techniciens</h3><p>Entretien courant, freins, pneus ou modification pointue, le tout au même endroit.</p></div></li>
+        <li><span class="step-num">04</span><div><h3>Rendez-vous rapide</h3><p>Un seul numéro à composer : 450-961-4030.</p></div></li>
+      </ol>
     </div>
   </section>
 
@@ -416,7 +350,7 @@
             <h3>Atelier automobile</h3>
             <p>Pour les autos, VUS et pick-up, de l'entretien courant à la modification pointue.</p>
           </div>
-          <a href="https://fdperformance.ca/boutique" class="btn btn-glass" target="_blank" rel="noopener">Voir les pièces auto</a>
+          <a href="https://fdperformance.ca/boutique" class="btn btn-glass" target="_blank" rel="noopener">Voir les pièces</a>
         </div>
         <div class="service-grid">
           <div class="service-item">
@@ -446,50 +380,14 @@
         </div>
       </div>
 
-      <div class="service-block alt reveal" id="vr">
-        <div class="service-top">
-          <div>
-            <h3>Atelier véhicules récréatifs</h3>
-            <p>Pour les roulottes, fifth wheels et motorisés, un service complet assuré par des techniciens expérimentés.</p>
-          </div>
-          <a href="https://vrterrebonne.ca/boutique" class="btn btn-glass" target="_blank" rel="noopener">Voir les pièces VR</a>
-        </div>
-        <div class="service-grid">
-          <div class="service-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>
-            <div><h4>Réparation générale de VR</h4><p>Techniciens expérimentés</p></div>
-          </div>
-          <div class="service-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M7 20h10M9 16v4M15 16v4"/></svg>
-            <div><h4>Panneaux solaires</h4><p>Et onduleurs</p></div>
-          </div>
-          <div class="service-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="14" height="8" rx="1"/><path d="M17 12h2a2 2 0 0 1 2 2v1"/><path d="M6 9V6M11 9V6"/></svg>
-            <div><h4>Batteries et autonomie</h4><p>Installation et remplacement</p></div>
-          </div>
-          <div class="service-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M12 9l6 12H6z"/><circle cx="12" cy="9" r="2"/></svg>
-            <div><h4>Antennes satellites</h4><p>Réparation</p></div>
-          </div>
-          <div class="service-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 3 5 6.5 5 10a5 5 0 0 1-10 0c0-3.5 3-7 5-10z"/></svg>
-            <div><h4>Mécanique motorisés</h4><p>Huile, pneus, alignement</p></div>
-          </div>
-          <div class="service-item">
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            <div><h4>Rendez-vous rapide</h4><p>Même équipe, même numéro</p></div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <section class="section section-tight" id="communs">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">TOUS LES VÉHICULES</div>
-        <h2>Le même entretien de base, peu importe ce que vous conduisez</h2>
+        <div class="eyebrow">L'ESSENTIEL</div>
+        <h2>Tout l'entretien de base, au même endroit</h2>
       </div>
       <div class="common-strip reveal">
         <div class="common-item">
@@ -525,12 +423,11 @@
       <div class="parts-banner reveal">
         <div>
           <h2>Besoin d'une pièce ? Magasinez en ligne.</h2>
-          <p>Nos deux boutiques restent spécialisées par type de véhicule, mais tout achat passe par la même équipe FD Performance.</p>
+          <p>Pièces de performance et d'entretien, installées par notre équipe si vous le souhaitez.</p>
         </div>
         <div class="parts-links">
           <a href="catalogue.html">Parcourir le catalogue <span>→</span></a>
-          <a href="https://fdperformance.ca/boutique" target="_blank" rel="noopener">Pièces automobile <span>→</span></a>
-          <a href="https://vrterrebonne.ca/boutique" target="_blank" rel="noopener">Pièces véhicules récréatifs <span>→</span></a>
+          <a href="https://fdperformance.ca/boutique" target="_blank" rel="noopener">Boutique en ligne <span>→</span></a>
         </div>
       </div>
     </div>
@@ -541,7 +438,7 @@
       <div class="section-head reveal">
         <div class="eyebrow">NOUS JOINDRE</div>
         <h2>Passez nous voir ou prenez rendez-vous</h2>
-        <p>Une seule équipe pour répondre à vos questions, peu importe le véhicule.</p>
+        <p>Une équipe pour répondre à toutes vos questions.</p>
       </div>
       <div class="contact-wrap reveal">
         <div class="contact-card">
@@ -589,7 +486,6 @@
     </div>
     <div>
       <div><a href="#auto">Automobile</a></div>
-      <div><a href="#vr">Véhicules récréatifs</a></div>
       <div><a href="catalogue.html">Catalogue</a></div>
     </div>
   </div>
