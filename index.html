@@ -161,6 +161,13 @@
   .hero-card-foot{display:flex; justify-content:space-between; margin-top:20px; font-size:0.82rem; color:#a9a49c;}
   .hero-card-foot strong{color:var(--white); display:block; font-size:1.15rem; font-weight:800;}
 
+  .accent{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .hero-stats{position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:56px; background:var(--glass); border:1px solid var(--glass-brd); border-radius:var(--radius-md); backdrop-filter:blur(10px);}
+  .hero-stats div{padding:22px 28px; border-left:1px solid var(--glass-brd);}
+  .hero-stats div:first-child{border-left:none;}
+  .hero-stats span{display:block; font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:#f0b8ba; margin-bottom:6px;}
+  .hero-stats strong{font-size:1.05rem; font-weight:700; color:var(--white);}
+
   /* Why-us */
   .section{padding:100px 0;}
   .section-tight{padding-top:0;}
@@ -258,6 +265,9 @@
   .footer-brand{color:var(--white); font-weight:800; margin-bottom:8px; font-size:1.05rem;}
 
   @media (max-width:900px){
+    .hero-stats{grid-template-columns:1fr; margin-top:36px;}
+    .hero-stats div{border-left:none; border-top:1px solid var(--glass-brd); padding:16px 20px;}
+    .hero-stats div:first-child{border-top:none;}
     .hero-inner{grid-template-columns:1fr;}
     .hero-card{order:-1;}
     .why-layout{grid-template-columns:1fr; gap:36px;}
@@ -277,22 +287,26 @@
     .nav-outer{padding:0 28px;}
     .nav-pill{max-width:none;}
     .hero-inner{grid-template-columns:1fr;}
-    .hero h1{max-width:none; font-size:clamp(3rem,5.6vw,5.6rem);}
-    .hero p{max-width:none; font-size:1.3rem;}
+    .hero{min-height:88vh; display:flex; align-items:center; padding-bottom:70px;}
+    .hero .wrap{width:100%;}
+    .hero h1{max-width:20ch; font-size:clamp(3rem,5.4vw,5.4rem); line-height:1.02;}
+    .hero p{max-width:60ch; font-size:1.25rem;}
     .hero-note{font-size:1rem;}
     .section-head{max-width:none;}
     .why-layout{grid-template-columns:1fr; gap:40px;}
     .why-intro p{max-width:none; font-size:1.15rem;}
     .why-steps{display:grid; grid-template-columns:repeat(4,1fr); gap:32px;}
-    .why-steps li{flex-direction:column; gap:14px; border-bottom:none; border-top:1px solid var(--line); padding:24px 0 0;}
-    .why-steps li:last-child{border-bottom:none;}
+    .why-steps li{flex-direction:column; gap:14px; border:1px solid var(--line); background:var(--card); border-radius:var(--radius-md); padding:30px 26px; transition:transform .2s ease, border-color .2s ease;}
+    .why-steps li:hover{transform:translateY(-4px); border-color:rgba(255,77,79,0.5);}
+    .why-steps li:last-child{border-bottom:1px solid var(--line);}
+    .step-num{font-size:2rem; font-weight:500;}
     .service-item{padding:28px 26px;}
     .service-top p, .parts-banner p{max-width:none;}
     .parts-banner{grid-template-columns:1fr;}
     .contact-wrap{grid-template-columns:1fr;}
     .map-frame, .map-frame iframe{min-height:420px;}
     body{padding-bottom:90px;}
-    .mobile-call{display:block; left:56px; right:56px;}
+    .mobile-call{display:block; left:50%; right:auto; width:420px; transform:translateX(-50%);}
     .hero{border-radius:0 0 28px 28px;}
     footer{border-radius:28px 28px 0 0;}
   }
@@ -335,7 +349,7 @@
     <div class="wrap hero-inner">
       <div class="reveal">
         <span class="hero-tag"><span class="dot"></span>Terrebonne, QC — mécanique et performance</span>
-        <h1>Votre auto entre les mains d'une équipe qui connaît son métier</h1>
+        <h1>Votre auto entre les mains d'une <span class="accent">équipe qui connaît son métier</span></h1>
         <p>FD Performance s'occupe de tout : entretien courant, reprogrammation et performance sur mesure. Un appel, un rendez-vous, et on s'occupe du reste.</p>
         <div class="hero-ctas">
           <a href="tel:4509614030" class="btn btn-primary">
@@ -344,7 +358,11 @@
           </a>
           <a href="#pieces" class="btn btn-glass">Voir les pièces</a>
         </div>
-        <div class="hero-note">Ouvert du lundi au samedi · 1343, rue Nationale, Terrebonne</div>
+      </div>
+      <div class="hero-stats reveal">
+        <div><span>Heures</span><strong>Lun–Ven 8h–17h · Sam 9h–13h</strong></div>
+        <div><span>Téléphone</span><strong>450-961-4030</strong></div>
+        <div><span>Adresse</span><strong>1343, rue Nationale, Terrebonne</strong></div>
       </div>
     </div>
   </section>
