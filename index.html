@@ -277,10 +277,17 @@
     .nav-outer{padding:0 28px;}
     .nav-pill{max-width:none;}
     .hero-inner{grid-template-columns:1fr;}
-    .hero h1{max-width:22ch;}
-    .hero p{max-width:60ch;}
-    .why-layout{grid-template-columns:1fr; gap:36px;}
-    .why-intro p{max-width:70ch;}
+    .hero h1{max-width:none; font-size:clamp(3rem,5.6vw,5.6rem);}
+    .hero p{max-width:none; font-size:1.3rem;}
+    .hero-note{font-size:1rem;}
+    .section-head{max-width:none;}
+    .why-layout{grid-template-columns:1fr; gap:40px;}
+    .why-intro p{max-width:none; font-size:1.15rem;}
+    .why-steps{display:grid; grid-template-columns:repeat(4,1fr); gap:32px;}
+    .why-steps li{flex-direction:column; gap:14px; border-bottom:none; border-top:1px solid var(--line); padding:24px 0 0;}
+    .why-steps li:last-child{border-bottom:none;}
+    .service-item{padding:28px 26px;}
+    .service-top p, .parts-banner p{max-width:none;}
     .parts-banner{grid-template-columns:1fr;}
     .contact-wrap{grid-template-columns:1fr;}
     .map-frame, .map-frame iframe{min-height:420px;}
